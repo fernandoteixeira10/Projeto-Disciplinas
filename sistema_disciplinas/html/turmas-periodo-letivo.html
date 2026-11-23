@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Sistema de Gerenciamento de Disciplinas e Docentes | IFRS
+  </title>
+  <link href="../style.css" rel="stylesheet"/>
+ </head>
+ <body data-page-key="turmas-periodo">
+  <header class="topbar">
+   <button aria-label="Abrir menu" class="mobile-menu" id="mobile-menu">
+    ☰
+   </button>
+   <div class="brand">
+    <div aria-hidden="true" class="if-mark">
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+    </div>
+    <div class="if-name">
+     <strong>
+      INSTITUTO FEDERAL
+     </strong>
+     <span>
+      Rio Grande do Sul
+      <br/>
+      Campus Viam&atilde;o
+     </span>
+    </div>
+   </div>
+   <div class="brand-divider">
+   </div>
+   <div class="system-name">
+    Sistema de Gerenciamento de
+    <br/>
+    Disciplinas e Docentes
+   </div>
+   <div class="top-tools">
+    <label class="search">
+     <input aria-label="Buscar no sistema" id="global-search" placeholder="Buscar no sistema..."/>
+     <button aria-label="Buscar" id="search-btn">
+      &telrec;
+     </button>
+    </label>
+    <span class="social instagram">
+     ◎
+    </span>
+    <span class="social facebook">
+     f
+    </span>
+    <span class="social youtube">
+     ▶
+    </span>
+    <span class="user-icon">
+     ♟
+    </span>
+    <span class="admin">
+     admin⌄
+    </span>
+   </div>
+  </header>
+  <div class="red-line">
+  </div>
+  <div class="app-shell">
+   <aside class="sidebar" id="sidebar">
+    <nav aria-label="Menu principal" id="main-nav">
+     <a aria-label="⌂ In&iacute;cio" class="nav-item" data-page="inicio" href="../index.html">
+      <span>
+       ⌂
+      </span>
+      In&iacute;cio
+     </a>
+     <div class="nav-group">
+      <button class="nav-item group-toggle" data-group="cadastros">
+       <span>
+        ▣
+       </span>
+       Cadastros
+       <b>
+        ⌃
+       </b>
+      </button>
+      <div class="nav-children" data-children="cadastros">
+       <a aria-label="♟ Professor" class="nav-item" data-page="professores" href="professores.html">
+        <span>
+         ♟
+        </span>
+        Professor
+       </a>
+       <a aria-label="◆ Curso" class="nav-item" data-page="cursos" href="cursos.html">
+        <span>
+         ◆
+        </span>
+        Curso
+       </a>
+       <a aria-label="▤ Disciplina" class="nav-item" data-page="disciplinas" href="disciplinas.html">
+        <span>
+         ▤
+        </span>
+        Disciplina
+       </a>
+       <a aria-label="◷ Turnos" class="nav-item" data-page="turnos" href="turnos.html">
+        <span>
+         ◷
+        </span>
+        Turnos
+       </a>
+       <a aria-label="▦ &Aacute;reas Acad&ecirc;micas" class="nav-item" data-page="areas" href="areas-academicas.html">
+        <span>
+         ▦
+        </span>
+        &Aacute;reas Acad&ecirc;micas
+       </a>
+      </div>
+     </div>
+     <div class="nav-group">
+      <button class="nav-item group-toggle" data-group="estrutura">
+       <span>
+        ▰
+       </span>
+       Estrutura Curricular
+       <b>
+        ⌄
+       </b>
+      </button>
+      <div class="nav-children hidden" data-children="estrutura">
+       <a aria-label="▧ Curr&iacute;culos" class="nav-item" data-page="curriculos" href="curriculos.html">
+        <span>
+         ▧
+        </span>
+        Curr&iacute;culos
+       </a>
+       <a aria-label="&nearrow; Alocar Disciplina ao Curr&iacute;culo" class="nav-item" data-page="vincular-disciplina" href="alocar-disciplina-curriculo.html">
+        <span>
+         &nearrow;
+        </span>
+        Alocar Disciplina ao Curr&iacute;culo
+       </a>
+      </div>
+     </div>
+     <div class="nav-group">
+      <button class="nav-item group-toggle" data-group="turmas">
+       <span>
+        ♧
+       </span>
+       Turmas
+       <b>
+        ⌃
+       </b>
+      </button>
+      <div class="nav-children" data-children="turmas">
+       <a aria-label="♟ Turma Ingressante" class="nav-item" data-page="ingressantes" href="turmas-ingressantes.html">
+        <span>
+         ♟
+        </span>
+        Turma Ingressante
+       </a>
+       <a aria-label="▦ Gerar Turmas Ingressantes" class="nav-item" data-page="gerar-ingressantes" href="gerar-turmas-ingressantes.html">
+        <span>
+         ▦
+        </span>
+        Gerar Turmas Ingressantes
+       </a>
+       <a aria-label="♧ Turmas em Per&iacute;odo Letivo" class="nav-item active" data-page="turmas-periodo" href="turmas-periodo-letivo.html">
+        <span>
+         ♧
+        </span>
+        Turmas em Per&iacute;odo Letivo
+       </a>
+       <a aria-label="▦ Gerar Turmas em Per&iacute;odo Letivo" class="nav-item" data-page="gerar-turmas" href="gerar-turmas-periodo-letivo.html">
+        <span>
+         ▦
+        </span>
+        Gerar Turmas em Per&iacute;odo Letivo
+       </a>
+      </div>
+     </div>
+     <a aria-label="▤ Ofertar Disciplinas" class="nav-item" data-page="ofertas" href="ofertas-disciplinas.html">
+      <span>
+       ▤
+      </span>
+      Ofertar Disciplinas
+     </a>
+     <div class="nav-group">
+      <button class="nav-item group-toggle" data-group="alocacoes">
+       <span>
+        ▣
+       </span>
+       Aloca&ccedil;&otilde;es
+       <b>
+        ⌄
+       </b>
+      </button>
+      <div class="nav-children hidden" data-children="alocacoes">
+       <a aria-label="♟ Alocar Professor &agrave; Disciplina-Turma" class="nav-item" data-page="alocar-professor" href="alocar-professor.html">
+        <span>
+         ♟
+        </span>
+        Alocar Professor &agrave; Disciplina-Turma
+       </a>
+      </div>
+     </div>
+     <div class="nav-group">
+      <button class="nav-item group-toggle" data-group="relatorios">
+       <span>
+        ▤
+       </span>
+       Relat&oacute;rios
+       <b>
+        ⌄
+       </b>
+      </button>
+      <div class="nav-children hidden" data-children="relatorios">
+       <a aria-label="▥ Cargas Hor&aacute;rias" class="nav-item" data-page="cargas" href="cargas-horarias.html">
+        <span>
+         ▥
+        </span>
+        Cargas Hor&aacute;rias
+       </a>
+      </div>
+     </div>
+     <a aria-label="&udarr; Importa&ccedil;&atilde;o / Exporta&ccedil;&atilde;o" class="nav-item" data-page="importar-exportar" href="importar-exportar.html">
+      <span>
+       &udarr;
+      </span>
+      Importa&ccedil;&atilde;o / Exporta&ccedil;&atilde;o
+     </a>
+    </nav>
+    <div class="sidebar-foot">
+     <span class="mini-avatar">
+      AD
+     </span>
+     <div>
+      <strong>
+       Administrador
+      </strong>
+      <small>
+       Sistema acad&ecirc;mico
+      </small>
+     </div>
+     <span class="more">
+      &bull;&bull;&bull;
+     </span>
+    </div>
+   </aside>
+   <main class="main-area">
+    <div class="breadcrumb" id="breadcrumb">
+     <span>
+      ⌂
+     </span>
+     <span>
+      &rsaquo;
+     </span>
+     <span>
+      Gerenciar Turmas em Per&iacute;odo Letivo
+     </span>
+    </div>
+    <div id="page-content">
+      <div class="note" role="note"><strong>Versão de testes:</strong> Esta tela ainda contém registros demonstrativos; CRUD de turmas em período letivo ainda não está implementado.</div>
+     <div class="page-wrap">
+      <div class="page-heading">
+       <div class="heading-icon">
+        ♧
+       </div>
+       <div>
+        <h1>
+         Gerenciar Turmas em Per&iacute;odo Letivo
+        </h1>
+        <p>
+         Consulte as turmas existentes por per&iacute;odo letivo.
+        </p>
+       </div>
+      </div>
+      <section class="panel">
+       <div class="toolbar">
+        <div class="field">
+         <input aria-label="Buscar registro" id="table-filter" placeholder="Buscar registro..."/>
+        </div>
+        <a class="btn btn-primary" href="form-turma.html">
+         ＋ Cadastrar turma
+        </a>
+       </div>
+       <div id="table-holder">
+        <div class="table-wrap">
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Turma
+            </th>
+            <th>
+             Curso
+            </th>
+            <th>
+             Per&iacute;odo letivo
+            </th>
+            <th>
+             Per&iacute;odo curricular
+            </th>
+            <th>
+             Turno
+            </th>
+            <th>
+             A&ccedil;&otilde;es
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             T01-2026
+            </td>
+            <td>
+             T&eacute;cnico em Inform&aacute;tica
+            </td>
+            <td>
+             2026 / Ano
+            </td>
+            <td>
+             1
+            </td>
+            <td>
+             Matutino
+            </td>
+            <td>
+             <div class="table-actions">
+              <button class="icon-btn edit" data-action="edit" data-index="0" data-key="turmas" title="Editar">
+               ✎
+              </button>
+              <button class="icon-btn" data-action="delete" data-index="0" data-key="turmas" title="Remover">
+               &times;
+              </button>
+             </div>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             T02-2026-1
+            </td>
+            <td>
+             An&aacute;lise e Desenvolvimento de Sistemas
+            </td>
+            <td>
+             2026 / 1&ordm; semestre
+            </td>
+            <td>
+             1
+            </td>
+            <td>
+             Noturno
+            </td>
+            <td>
+             <div class="table-actions">
+              <button class="icon-btn edit" data-action="edit" data-index="1" data-key="turmas" title="Editar">
+               ✎
+              </button>
+              <button class="icon-btn" data-action="delete" data-index="1" data-key="turmas" title="Remover">
+               &times;
+              </button>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="muted" style="font-size:11px;margin-top:10px">
+         Mostrando 2 registro(s) demonstrativo(s).
+        </div>
+       </div>
+      </section>
+     </div>
+    </div>
+    <footer class="footer">
+     <span>
+      IFRS &ndash; Campus Viam&atilde;o&nbsp;&nbsp; | &nbsp;&nbsp;Sistema de Gerenciamento de Disciplinas e Docentes
+     </span>
+     <em>
+      Educa&ccedil;&atilde;o p&uacute;blica, gratuita e de qualidade.
+     </em>
+    </footer>
+   </main>
+  </div>
+  <div aria-live="polite" class="toast" id="toast" role="status">
+  </div>
+  <script src="../js/models/database.js"></script>
+  <script src="../js/models/repositories.js"></script>
+  <script src="../js/views/crud-view.js"></script>
+  <script src="../js/presenters/crud-presenter.js"></script>
+  <script src="../app.js">
+  </script>
+ </body>
+</html>
+
