@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sistema de Gerenciamento de Disciplinas e Docentes | IFRS Campus Viamão</title>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body data-pagina-key="inicio">
+<header class="topbar">
+<button aria-label="Abrir menu" class="mobile-menu" id="mobile-menu">
+    ☰
+   </button>
+<div class="brand"><img alt="Instituto Federal do Rio Grande do Sul" class="ifrs-logo" src="https://ifrs.edu.br/wp-content/uploads/2022/08/Logo-IFRS-cores-sem-fundo-Horizontal.png"/></div>
+<div class="brand-divider">
+</div>
+<div class="system-name">
+    Sistema de Gerenciamento de
+    <br/>
+    Disciplinas e Docentes
+   </div>
+<div class="top-tools">
+<label class="search">
+<input aria-label="Buscar no sistema" id="global-search" placeholder="Buscar no sistema..."/>
+<button aria-label="Buscar" id="search-btn">
+      ⌕
+     </button>
+</label>
+
+
+
+<span class="user-icon">
+     ♟
+    </span>
+<span class="admin">
+     admin⌄
+    </span>
+</div>
+</header>
+<div class="red-line">
+</div>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<nav aria-label="Menu principal" id="main-nav">
+<a aria-label="⌂ Início" class="nav-item active" data-pagina="inicio" href="#inicio">
+<span>
+       ⌂
+      </span>
+      Início
+     </a>
+<div class="nav-group">
+<button class="nav-item group-toggle" data-group="cadastros">
+<span>
+        ▣
+       </span>
+       Cadastros
+       <b>
+        ⌃
+       </b>
+</button>
+<div class="nav-children" data-children="cadastros">
+<a aria-label="♟ Professor" class="nav-item" data-pagina="professores" href="#professores">
+<span>
+         ♟
+        </span>
+        Professor
+       </a>
+<a aria-label="◆ Curso" class="nav-item" data-pagina="cursos" href="#cursos">
+<span>
+         ◆
+        </span>
+        Curso
+       </a>
+<a aria-label="▤ Disciplina" class="nav-item" data-pagina="disciplinas" href="#disciplinas">
+<span>
+         ▤
+        </span>
+        Disciplina
+       </a>
+<a aria-label="◷ Turnos" class="nav-item" data-pagina="turnos" href="#turnos">
+<span>
+         ◷
+        </span>
+        Turnos
+       </a>
+<a aria-label="▦ Áreas Acadêmicas" class="nav-item" data-pagina="areas" href="#areas">
+<span>
+         ▦
+        </span>
+        Áreas Acadêmicas
+       </a>
+</div>
+</div>
+<div class="nav-group">
+<button class="nav-item group-toggle" data-group="estrutura">
+<span>
+        ▰
+       </span>
+       Estrutura Curricular
+       <b>
+        ⌄
+       </b>
+</button>
+<div class="nav-children hidden" data-children="estrutura">
+<a aria-label="▧ Currículos" class="nav-item" data-pagina="curriculos" href="#curriculos">
+<span>
+         ▧
+        </span>
+        Currículos
+       </a>
+<a aria-label="↗ Alocar Disciplina ao Currículo" class="nav-item" data-pagina="vincular-disciplina" href="#vincular-disciplina">
+<span>
+         ↗
+        </span>
+        Alocar Disciplina ao Currículo
+       </a>
+</div>
+</div>
+<div class="nav-group">
+<button class="nav-item group-toggle" data-group="turmas">
+<span>
+        ♧
+       </span>
+       Turmas
+       <b>
+        ⌄
+       </b>
+</button>
+<div class="nav-children hidden" data-children="turmas">
+<a aria-label="♟ Turma Ingressante" class="nav-item" data-pagina="ingressantes" href="#ingressantes">
+<span>
+         ♟
+        </span>
+        Turma Ingressante
+       </a>
+<a aria-label="▦ Gerar Turmas Ingressantes" class="nav-item" data-pagina="gerar-ingressantes" href="#gerar-ingressantes">
+<span>
+         ▦
+        </span>
+        Gerar Turmas Ingressantes
+       </a>
+<a aria-label="♧ Turmas em Período Letivo" class="nav-item" data-pagina="turmas-periodo" href="#turmas-periodo">
+<span>
+         ♧
+        </span>
+        Turmas em Período Letivo
+       </a>
+<a aria-label="▦ Gerar Turmas em Período Letivo" class="nav-item" data-pagina="gerar-turmas" href="#gerar-turmas">
+<span>
+         ▦
+        </span>
+        Gerar Turmas em Período Letivo
+       </a>
+</div>
+</div>
+<a aria-label="▤ Ofertar Disciplinas" class="nav-item" data-pagina="ofertas" href="#ofertas">
+<span>
+       ▤
+      </span>
+      Ofertar Disciplinas
+     </a>
+<div class="nav-group">
+<button class="nav-item group-toggle" data-group="alocacoes">
+<span>
+        ▣
+       </span>
+       Alocações
+       <b>
+        ⌄
+       </b>
+</button>
+<div class="nav-children hidden" data-children="alocacoes">
+<a aria-label="♟ Alocar Professor à Disciplina-Turma" class="nav-item" data-pagina="alocar-professor" href="#alocar-professor">
+<span>
+         ♟
+        </span>
+        Alocar Professor à Disciplina-Turma
+       </a>
+</div>
+</div>
+<div class="nav-group">
+<button class="nav-item group-toggle" data-group="relatorios">
+<span>
+        ▤
+       </span>
+       Relatórios
+       <b>
+        ⌄
+       </b>
+</button>
+<div class="nav-children hidden" data-children="relatorios">
+<a aria-label="▥ Cargas Horárias" class="nav-item" data-pagina="cargas" href="#cargas">
+<span>
+         ▥
+        </span>
+        Cargas Horárias
+       </a>
+</div>
+</div>
+<a aria-label="⇅ Importação / Exportação" class="nav-item" data-pagina="importar-exportar" href="#importar-exportar">
+<span>
+       ⇅
+      </span>
+      Importação / Exportação
+     </a>
+</nav>
+<div class="sidebar-foot">
+<span class="mini-avatar">
+      AD
+     </span>
+<div>
+<strong>
+       Administrador
+      </strong>
+<small>
+       Sistema acadêmico
+      </small>
+</div>
+<span class="more">
+      •••
+     </span>
+</div>
+</aside>
+<main class="main-area">
+<div class="breadcrumb" id="breadcrumb"><span>⌂</span><span>›</span><span id="breadcrumb-label">Início</span></div>
+<div id="page-content">
+<section aria-labelledby="heading-inicio" class="app-page" data-pagina="inicio" id="page-inicio">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▥
+       </div>
+<div>
+<h1 id="heading-inicio">
+         Início
+        </h1>
+<p>
+         Painel de gerenciamento de disciplinas e docentes.
+        </p>
+</div>
+</div>
+<div class="stats">
+<article class="stat-card">
+<div class="stat-icon">
+         ♟
+        </div>
+<div>
+<span>
+          Professores
+         </span>
+<strong data-contagem="professor">—</strong>
+<small>
+          Docentes cadastrados
+         </small>
+</div>
+</article>
+<article class="stat-card">
+<div class="stat-icon">
+         ◆
+        </div>
+<div>
+<span>
+          Cursos
+         </span>
+<strong data-contagem="curso">—</strong>
+<small>
+          Cursos registrados
+         </small>
+</div>
+</article>
+<article class="stat-card">
+<div class="stat-icon">
+         ▤
+        </div>
+<div>
+<span>
+          Disciplinas
+         </span>
+<strong data-contagem="disciplina">—</strong>
+<small>
+          Disciplinas cadastradas
+         </small>
+</div>
+</article>
+<article class="stat-card">
+<div class="stat-icon">
+         ♧
+        </div>
+<div>
+<span>
+          Turmas
+         </span>
+<strong data-contagem="turma">—</strong>
+<small>Turmas cadastradas</small>
+</div>
+</article>
+</div>
+<div class="dashboard-grid">
+<section class="panel">
+<h2 class="panel-title">
+         Acesso rápido
+        </h2>
+<div class="quick-links">
+<a class="quick-link" href="#professores">
+<span>
+           ♟
+          </span>
+          Gerenciar Professores
+         </a>
+<a class="quick-link" href="#cursos">
+<span>
+           ◆
+          </span>
+          Gerenciar Cursos
+         </a>
+<a class="quick-link" href="#disciplinas">
+<span>
+           ▤
+          </span>
+          Gerenciar Disciplinas
+         </a>
+<a class="quick-link" href="#alocar-professor">
+<span>
+           ↗
+          </span>
+          Alocar Professor
+         </a>
+<a class="quick-link" href="#cargas">
+<span>
+           ▥
+          </span>
+          Visualizar Cargas Horárias
+         </a>
+<a class="quick-link" href="#importar-exportar">
+<span>
+           ⇅
+          </span>
+          Importar / Exportar
+         </a>
+</div>
+</section>
+<section class="panel">
+<h2 class="panel-title">
+         Fluxo do sistema
+        </h2>
+<p class="inline-help">
+         Sequência sugerida para organizar a distribuição de disciplinas.
+        </p>
+<ol style="line-height:2.2;color:#36546a;padding-left:22px">
+<li>
+          Cadastrar turnos e áreas acadêmicas.
+         </li>
+<li>
+          Cadastrar professores, cursos e disciplinas.
+         </li>
+<li>
+          Criar currículos e incluir disciplinas.
+         </li>
+<li>
+          Gerar turmas ingressantes e turmas por período.
+         </li>
+<li>
+          Ofertar disciplinas e alocar docentes.
+         </li>
+<li>
+          Consultar cargas horárias por professor.
+         </li>
+</ol>
+<div class="note">
+         As telas de Turnos, Áreas Acadêmicas, Cursos, Disciplinas e Professores já possuem cadastro, consulta, edição e exclusão com armazenamento local.
+        </div>
+</section>
+</div>
+</div>
+</section>
+<section class="app-page" data-pagina="vincular-disciplina" hidden="" id="page-vincular-disciplina"><div aria-live="polite" class="workflow-root" data-workflow="vincular-disciplina"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section class="app-page" data-pagina="alocar-professor" hidden="" id="page-alocar-professor"><div aria-live="polite" class="workflow-root" data-workflow="alocar-professor"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section aria-labelledby="heading-areas" class="app-page" data-pagina="areas" hidden="" id="page-areas">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▦
+       </div>
+<div>
+<h1 id="heading-areas">
+         Gerenciar Áreas Acadêmicas
+        </h1>
+<p>
+         Organize as áreas acadêmicas vinculadas a docentes e disciplinas.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-areas" placeholder="Buscar registro..."/>
+</div>
+<a class="btn btn-primary" href="#form-area">
+         ＋ Adicionar área
+        </a>
+</div>
+<div id="table-holder-areas">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>
+             Sigla
+            </th>
+<th>
+             Nome
+            </th>
+<th>
+             Descrição
+            </th>
+<th>
+             Ações
+            </th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section>
+<section class="app-page" data-pagina="cargas" hidden="" id="page-cargas"><div aria-live="polite" class="workflow-root" data-workflow="cargas"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section aria-labelledby="heading-curriculos" class="app-page" data-pagina="curriculos" hidden="" id="page-curriculos">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▧
+       </div>
+<div>
+<h1 id="heading-curriculos">
+         Currículos
+        </h1>
+<p>
+         Consulte currículos cadastrados e sua organização curricular.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-curriculos" placeholder="Buscar registro..."/>
+</div>
+<span class="note">Para cadastrar um currículo, acesse a lista de cursos e use a ação de adicionar currículo no curso desejado.</span>
+</div>
+<div id="curriculos-contexto" class="curriculos-contexto" hidden><span></span> <a href="#curriculos">Ver todos os currículos</a></div>
+<div id="table-holder-curriculos">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>
+             Currículo
+            </th>
+<th>
+             Código do curso
+            </th>
+<th>
+             Período inicial
+            </th>
+<th>
+             Periodicidade
+            </th>
+<th>
+             Total de períodos
+            </th>
+<th>
+             Situação
+            </th>
+<th>
+             Ações
+            </th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section>
+<section aria-labelledby="heading-cursos" class="app-page" data-pagina="cursos" hidden="" id="page-cursos">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ◆
+       </div>
+<div>
+<h1 id="heading-cursos">
+         Gerenciar Cursos
+        </h1>
+<p>
+         Consulte os cursos e acesse seus currículos.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-cursos" placeholder="Buscar registro..."/>
+</div>
+<a class="btn btn-primary" href="#form-curso">
+         ＋ Cadastrar curso
+        </a>
+</div>
+<div id="table-holder-cursos">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Nome</th>
+<th>Currículos</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section>
+<section aria-labelledby="heading-disciplinas" class="app-page" data-pagina="disciplinas" hidden="" id="page-disciplinas">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▤
+       </div>
+<div>
+<h1 id="heading-disciplinas">
+         Gerenciar Disciplinas
+        </h1>
+<p>
+         Cadastre disciplinas e suas quantidades de aulas.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-disciplinas" placeholder="Buscar registro..."/>
+</div>
+<a class="btn btn-primary" href="#form-disciplina">
+         ＋ Cadastrar disciplina
+        </a>
+</div>
+<div id="table-holder-disciplinas">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>
+             Código
+            </th>
+<th>
+             Nome
+            </th>
+<th>
+             Aulas por semana
+            </th>
+<th>
+             Total de aulas
+            </th>
+<th>
+             Área acadêmica
+            </th>
+<th>
+             Ações
+            </th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section>
+<dialog aria-labelledby="heading-form-area" class="app-page modal-dialog" data-pagina="form-area" id="page-form-area">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▦
+       </div>
+<div>
+<h1 id="heading-form-area">
+         Cadastrar Área Acadêmica
+        </h1>
+<p>
+         Cadastre uma área acadêmica.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados da Área Acadêmica
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="area-sigla">
+           Sigla
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="area-sigla" name="area-sigla" placeholder="" required="" type="text"/>
+</div>
+<div class="field">
+<label for="area-nome">
+           Nome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="area-nome" name="area-nome" placeholder="" required="" type="text"/>
+</div>
+<div class="field full">
+<label for="area-descricao">
+           Descrição
+          </label>
+<textarea id="area-descricao" name="area-descricao" placeholder="Descrição da área"></textarea>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar área
+         </button>
+</div>
+</form>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="heading-form-curriculo" class="app-page modal-dialog" data-pagina="form-curriculo" id="page-form-curriculo">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▧
+       </div>
+<div>
+<h1 id="heading-form-curriculo">
+         Cadastrar Currículo
+        </h1>
+<p>
+         Defina os períodos, periodicidades, duração da aula e turnos do currículo.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados do Currículo
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="cur-ano-inicial">Ano inicial</label>
+<input id="cur-ano-inicial" min="0" name="cur-ano-inicial" placeholder="Sem previsão de início" type="number"/>
+</div>
+<div class="field">
+<label for="cur-sem-inicial">Período inicial</label>
+<select id="cur-sem-inicial" name="cur-sem-inicial">
+<option value="">
+            Selecione
+           </option>
+<option value="0">
+            Ano inteiro
+           </option>
+<option value="1">
+            1º semestre
+           </option>
+<option value="2">
+            2º semestre
+           </option>
+</select>
+</div>
+<div class="field">
+<label for="cur-ano-final">
+           Ano final
+          </label>
+<input id="cur-ano-final" min="0" name="cur-ano-final" placeholder="Opcional" type="number"/>
+</div>
+<div class="field">
+<label for="cur-sem-final">
+           Semestre final
+          </label>
+<select id="cur-sem-final" name="cur-sem-final">
+<option value="">
+            Selecione
+           </option>
+<option value="0">
+            Ano inteiro
+           </option>
+<option value="1">
+            1º semestre
+           </option>
+<option value="2">
+            2º semestre
+           </option>
+</select>
+</div>
+<div class="field">
+<label for="cur-ingresso">
+           Periodicidade de ingresso
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="cur-ingresso" name="cur-ingresso" required="">
+<option value="">
+            Selecione
+           </option>
+<option value="anual">
+            Anual
+           </option>
+<option value="semestral">
+            Semestral
+           </option>
+<option value="trimestral">
+            Trimestral
+           </option>
+<option value="bimestral">
+            Bimestral
+           </option>
+</select>
+</div>
+<div class="field">
+<label for="cur-periodicidade">
+           Periodicidade curricular
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="cur-periodicidade" name="cur-periodicidade" required="">
+<option value="">
+            Selecione
+           </option>
+<option value="anual">
+            Anual
+           </option>
+<option value="semestral">
+            Semestral
+           </option>
+<option value="trimestral">
+            Trimestral
+           </option>
+<option value="bimestral">
+            Bimestral
+           </option>
+</select>
+</div>
+<div class="field">
+<label for="cur-total-periodos">
+           Quantidade de períodos curriculares
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="cur-total-periodos" min="0" name="cur-total-periodos" placeholder="Ex.: 6" required="" type="number"/>
+</div>
+<div class="field">
+<label for="cur-duracao">
+           Duração de cada aula (minutos)
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="cur-duracao" min="0" name="cur-duracao" placeholder="Ex.: 50" required="" type="number"/>
+</div>
+<div class="field">
+<label for="cur-area">
+           Área acadêmica
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="cur-area" name="cur-area" required="">
+<option value="">
+            Selecione
+           </option>
+
+
+
+</select>
+</div>
+<div class="field">
+<label for="cur-situacao">
+           Situação
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="cur-situacao" name="cur-situacao" required="">
+<option value="">
+            Selecione
+           </option>
+<option value="ativo">
+            Ativo
+           </option>
+<option value="suspenso">
+            Suspenso
+           </option>
+<option value="extinto">
+            Extinto
+           </option>
+</select>
+</div>
+<div class="field full">
+<span class="field-label">
+           Turnos disponíveis
+           <span class="required">
+            *
+           </span>
+</span>
+<div class="check-row" data-turnos=""></div>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar currículo
+         </button>
+</div>
+</form>
+</section>
+<div class="note">
+       O currículo deve ser cadastrado a partir do curso ao qual pertence. Se ainda não houver previsão de início, deixe os campos de vigência inicial e final vazios.
+      </div>
+</div>
+</dialog>
+<dialog aria-labelledby="heading-form-curso" class="app-page modal-dialog" data-pagina="form-curso" id="page-form-curso">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ◆
+       </div>
+<div>
+<h1 id="heading-form-curso">
+         Cadastrar Curso
+        </h1>
+<p>
+         Informe o código e o nome do curso.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados do Curso
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="curso-codigo">
+           Código
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="curso-codigo" name="curso-codigo" placeholder="Ex.: ADS" required="" type="text"/>
+</div>
+<div class="field">
+<label for="curso-nome">
+           Nome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="curso-nome" name="curso-nome" placeholder="Nome do curso" required="" type="text"/>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar curso
+         </button>
+</div>
+</form>
+</section>
+<div class="note">
+       O curso contém somente código e nome. As demais informações acadêmicas pertencem ao currículo.
+      </div>
+</div>
+</dialog>
+<dialog aria-labelledby="heading-form-disciplina" class="app-page modal-dialog" data-pagina="form-disciplina" id="page-form-disciplina">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ▤
+       </div>
+<div>
+<h1 id="heading-form-disciplina">
+         Cadastrar Disciplina
+        </h1>
+<p>
+         Informe os dados e a quantidade de aulas da disciplina.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados da Disciplina
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="disc-codigo">
+           Código
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="disc-codigo" name="disc-codigo" placeholder="Ex.: INF101" required="" type="text"/>
+</div>
+<div class="field">
+<label for="disc-nome">
+           Nome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="disc-nome" name="disc-nome" placeholder="Nome da disciplina" required="" type="text"/>
+</div>
+<div class="field">
+<label for="disc-aulas-semanais">
+           Aulas por semana
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="disc-aulas-semanais" min="0" name="disc-aulas-semanais" placeholder="Ex.: 4" required="" type="number"/>
+</div>
+<div class="field">
+<label for="disc-total-aulas">
+           Total de aulas
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="disc-total-aulas" min="0" name="disc-total-aulas" placeholder="Ex.: 80" required="" type="number"/>
+</div>
+<div class="field">
+<label for="disc-area">
+           Área acadêmica (opcional)
+          </label>
+<select id="disc-area" name="disc-area">
+<option value="">
+            Selecione
+           </option>
+
+
+
+</select>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar disciplina
+         </button>
+</div>
+</form>
+</section>
+<div class="note">
+       A duração de cada aula pertence ao currículo. Não foram incluídos carga horária total, modalidade, departamento, tipo de disciplina ou ementa.
+      </div>
+</div>
+</dialog>
+<dialog aria-labelledby="heading-form-professor" class="app-page modal-dialog" data-pagina="form-professor" id="page-form-professor">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ♟
+       </div>
+<div>
+<h1 id="heading-form-professor">
+         Cadastrar Professor
+        </h1>
+<p>
+         Informe os dados do docente.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados do Professor
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="prof-nome">
+           Nome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-nome" name="prof-nome" placeholder="" required="" type="text"/>
+</div>
+<div class="field">
+<label for="prof-sobrenome">
+           Sobrenome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-sobrenome" name="prof-sobrenome" placeholder="" required="" type="text"/>
+</div>
+<div class="field">
+<label for="prof-abreviado">
+           Nome abreviado
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-abreviado" name="prof-abreviado" placeholder="" required="" type="text"/>
+</div>
+<div class="field">
+<label for="prof-email">
+           E-mail
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-email" name="prof-email" placeholder="" required="" type="email"/>
+</div>
+<div class="field">
+<label for="prof-area">
+           Área acadêmica
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="prof-area" name="prof-area" required="">
+<option value="">
+            Selecione
+           </option>
+
+
+
+</select>
+</div>
+<div class="field">
+<label for="prof-min">
+           Horas mín. (hora-aula)
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-min" min="0" name="prof-min" placeholder="Ex.: 8" required="" type="number"/>
+</div>
+<div class="field">
+<label for="prof-max">
+           Horas máx. (hora-aula)
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-max" min="0" name="prof-max" placeholder="Ex.: 16" required="" type="number"/>
+</div>
+<div class="field">
+<label for="prof-med">
+           Horas médias (hora-aula)
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="prof-med" min="0" name="prof-med" placeholder="Ex.: 12" required="" type="number"/>
+</div>
+<div class="field full">
+<label for="prof-obs">
+           Observações
+          </label>
+<textarea id="prof-obs" name="prof-obs" placeholder="Informações adicionais"></textarea>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar professor
+         </button>
+</div>
+</form>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="heading-form-turno" class="app-page modal-dialog" data-pagina="form-turno" id="page-form-turno">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ◷
+       </div>
+<div>
+<h1 id="heading-form-turno">
+         Cadastrar Turno
+        </h1>
+<p>
+         Cadastre um turno disponível no campus.
+        </p>
+</div>
+</div>
+<section class="panel">
+<h2 class="panel-title">
+        Dados do Turno
+       </h2>
+<form class="data-form">
+<div class="form-grid">
+<div class="field">
+<label for="turno-sigla">
+           Sigla
+           <span class="required">
+            *
+           </span>
+</label>
+<select id="turno-sigla" name="turno-sigla" required="">
+<option value="">
+            Selecione
+           </option>
+<option value="M">
+            M — Matutino
+           </option>
+<option value="T">
+            T — Vespertino
+           </option>
+<option value="N">
+            N — Noturno
+           </option>
+</select>
+</div>
+<div class="field">
+<label for="turno-nome">
+           Nome
+           <span class="required">
+            *
+           </span>
+</label>
+<input id="turno-nome" name="turno-nome" placeholder="Nome do turno" required="" type="text"/>
+</div>
+<div class="field full">
+<label for="turno-descricao">
+           Descrição
+          </label>
+<textarea id="turno-descricao" name="turno-descricao" placeholder="Descrição do turno"></textarea>
+</div>
+</div>
+<div class="form-actions">
+<button class="btn btn-outline" data-fechar="" type="button">Cancelar</button>
+<button class="btn btn-outline" type="reset">
+          Limpar
+         </button>
+<button class="btn btn-primary" type="submit">
+          ▣ Cadastrar turno
+         </button>
+</div>
+</form>
+</section>
+</div>
+</dialog>
+<section class="app-page" data-pagina="gerar-ingressantes" hidden="" id="page-gerar-ingressantes"><div aria-live="polite" class="workflow-root" data-workflow="gerar-ingressantes"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section class="app-page" data-pagina="gerar-turmas" hidden="" id="page-gerar-turmas"><div aria-live="polite" class="workflow-root" data-workflow="gerar-turmas"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section aria-labelledby="heading-importar-exportar" class="app-page" data-pagina="importar-exportar" hidden="" id="page-importar-exportar">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ⇅
+       </div>
+<div>
+<h1 id="heading-importar-exportar">
+         Importação / Exportação de Dados
+        </h1>
+<p>
+         Importe ou exporte os dados do sistema.
+        </p>
+</div>
+</div>
+<div class="two-panels">
+<section class="panel">
+<h2 class="panel-title">
+         Importar dados
+        </h2>
+<p class="inline-help">
+         Selecione um arquivo de dados para importar na aplicação.
+        </p>
+<div class="field">
+<label for="import-file">
+          Arquivo de backup JSON
+         </label>
+<input accept=".json,application/json" id="import-file" type="file"/>
+</div>
+<div class="form-actions">
+<button class="btn btn-primary" data-action="import-file">
+          ⇧ Selecionar arquivo
+         </button>
+</div>
+<div class="note">A importação substitui os dados atuais. Exporte um backup antes de continuar.</div>
+</section>
+<section class="panel">
+<h2 class="panel-title">
+         Exportar dados
+        </h2>
+<p class="inline-help">
+         Gere uma cópia de segurança dos registros armazenados neste navegador.
+        </p>
+<div class="field">
+<label for="export-format">
+          Formato
+         </label>
+<select id="export-format">
+<option value="json">JSON</option>
+</select>
+<button class="btn btn-primary" id="export-button" type="button">Exportar backup JSON</button>
+</div>
+<div class="note">
+         O arquivo JSON inclui as tabelas do banco local, inclusive as associações.
+        </div>
+</section>
+</div>
+</div>
+</section>
+<section class="app-page" data-pagina="ofertas" hidden="" id="page-ofertas"><div aria-live="polite" class="workflow-root" data-workflow="ofertas"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section aria-labelledby="heading-professores" class="app-page" data-pagina="professores" hidden="" id="page-professores">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ♟
+       </div>
+<div>
+<h1 id="heading-professores">
+         Gerenciar Professores
+        </h1>
+<p>
+         Consulte e mantenha os dados dos docentes.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-professores" placeholder="Buscar registro..."/>
+</div>
+<a class="btn btn-primary" href="#form-professor">
+         ＋ Cadastrar professor
+        </a>
+</div>
+<div id="table-holder-professores">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>
+             Nome
+            </th>
+<th>
+             Sobrenome
+            </th>
+<th>
+             Nome abreviado
+            </th>
+<th>
+             E-mail
+            </th>
+<th>
+             Área acadêmica
+            </th>
+<th>
+             Horas mín.
+            </th>
+<th>
+             Horas máx.
+            </th>
+<th>
+             Horas médias
+            </th>
+<th>
+             Ações
+            </th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section>
+<section class="app-page" data-pagina="ingressantes" hidden="" id="page-ingressantes"><div aria-live="polite" class="workflow-root" data-workflow="ingressantes"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section class="app-page" data-pagina="turmas-periodo" hidden="" id="page-turmas-periodo"><div aria-live="polite" class="workflow-root" data-workflow="turmas-periodo"><p class="estado-carregamento">Carregando dados...</p></div></section>
+<section aria-labelledby="heading-turnos" class="app-page" data-pagina="turnos" hidden="" id="page-turnos">
+<div class="page-wrap">
+<div class="page-heading">
+<div class="heading-icon">
+        ◷
+       </div>
+<div>
+<h1 id="heading-turnos">
+         Gerenciar Turnos
+        </h1>
+<p>
+         Cadastre os turnos disponíveis no campus.
+        </p>
+</div>
+</div>
+<section class="panel">
+<div class="toolbar">
+<div class="field">
+<input aria-label="Buscar registro" id="table-filter-turnos" placeholder="Buscar registro..."/>
+</div>
+<a class="btn btn-primary" href="#form-turno">
+         ＋ Adicionar turno
+        </a>
+</div>
+<div id="table-holder-turnos">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>
+             Sigla
+            </th>
+<th>
+             Nome
+            </th>
+<th>
+             Descrição
+            </th>
+<th>
+             Ações
+            </th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="muted contagem-registros">Carregando registros...</div>
+</div>
+</section>
+</div>
+</section></div>
+<footer class="footer">
+<span>
+      IFRS – Campus Viamão   |   Sistema de Gerenciamento de Disciplinas e Docentes
+     </span>
+<em>
+      Educação pública, gratuita e de qualidade.
+     </em>
+</footer>
+</main>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status">
+</div>
+
+
+<script src="js/db.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
